@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import classNames from "classnames";
-import logo from "../logoSvg.svg";
+import logo from "../loggo.png";
 import "./Header.css";
 
 const navItems = {
@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="left-menu">
-        <Link to="/">
-          <img src={logo} alt="logo" className="logo" />
+        <Link to="/" className="desctop logo">
+          ООО «АгенПрод»
         </Link>
         <div className="menu-wrapper">
           <Link

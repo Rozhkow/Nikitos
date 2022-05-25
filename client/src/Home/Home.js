@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-// import { Carousel } from "react-responsive-carousel";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import city1 from "../assets/imgs/city1.jpg";
 import city2 from "../assets/imgs/city2.jpg";
@@ -37,23 +36,37 @@ const Home = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
   return (
-    <section className="sliderr">
-      {SliderData.map((slide, index) => {
-        return (
-          <div
-            className={classNames("slide", { active: index === current })}
-            // className={index === current ? "slide active" : "slide"}
-            key={index}
-          >
-            {index === current && (
-              <img src={slide.image} alt="book" className="image" />
-            )}
-          </div>
-        );
-      })}
-      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-    </section>
+    <>
+      <div className="title-wrapper">
+        <p className="title">
+          ООО «АгенПрод» - это предприятие, <br />
+          занимающееся предоставлением <br />
+          экспертных консультационных услуг
+        </p>
+        <p className="desc">
+          Данная программа обладает актуальной информацией <br />
+          по продажам недвижимости, а также работает на рынке <br />
+          Республики Беларусь более 14 лет
+        </p>
+      </div>
+      <section className="sliderr">
+        {SliderData.map((slide, index) => {
+          return (
+            <div
+              className={classNames("slide", { active: index === current })}
+              // className={index === current ? "slide active" : "slide"}
+              key={index}
+            >
+              {index === current && (
+                <img src={slide.image} alt="book" className="image" />
+              )}
+            </div>
+          );
+        })}
+        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+      </section>
+    </>
   );
 };
 
